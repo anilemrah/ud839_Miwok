@@ -26,7 +26,9 @@ import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
-    /** Handles playback of all the sound files */
+    /**
+     * Handles playback of all the sound files
+     */
     private MediaPlayer mMediaPlayer;
 
     /**
@@ -95,6 +97,12 @@ public class NumbersActivity extends AppCompatActivity {
                 mMediaPlayer.setOnCompletionListener(mCompletionListener);
             }
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
     }
 
     /**
