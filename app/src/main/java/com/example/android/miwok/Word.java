@@ -1,7 +1,3 @@
-/**
- * Created by anilemrah on 1.11.2018.
- */
-
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -17,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.example.android.miwok;
 
 /**
  * {@link Word} represents a vocabulary word that the user wants to learn.
- * It contains a default translation and a Miwok translation for that word.
+ * It contains a default translation, a Miwok translation, and an image for that word.
  */
 public class Word {
 
@@ -56,13 +51,13 @@ public class Word {
      * @param defaultTranslation is the word in a language that the user is already familiar with
      *                           (such as English)
      * @param miwokTranslation is the word in the Miwok language
+     * @param imageResourceId is the drawable resource ID for the image associated with the word
      *
-     * @param wordResourceId is the resource ID of related image source
      */
-    public Word(String defaultTranslation, String miwokTranslation, int wordResourceId) {
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
-        mImageResourceId = wordResourceId;
+        mImageResourceId = imageResourceId;
     }
 
     /**
@@ -80,7 +75,7 @@ public class Word {
     }
 
     /**
-     * Get the related word's resource ID.
+     * Return the image resource ID of the word.
      */
     public int getImageResourceId() {
         return mImageResourceId;
@@ -92,5 +87,4 @@ public class Word {
     public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
-
 }
